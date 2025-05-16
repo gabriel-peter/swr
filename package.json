@@ -1,6 +1,6 @@
 {
-  "name": "swr",
-  "version": "2.3.3",
+  "name": "@gabrielryanpeter/swr",
+  "version": "2.3.3-patch.1",
   "description": "React Hooks library for remote data fetching",
   "keywords": [
     "swr",
