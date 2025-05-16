@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useTransition } from 'react'
 import useSWR, { useSWRConfig } from '../index'
 import type { Middleware, Key } from '../_internal'
 import { useStateWithDeps, startTransition } from './state'
@@ -26,6 +26,7 @@ const mutation = (<Data, Error>() =>
     fetcher: MutationFetcher<Data>,
     config: SWRMutationConfiguration<Data, Error> = {}
   ) => {
+    const [, startTransition] = useTransition()
     const { mutate } = useSWRConfig()
     const keyRef = useRef(key)
     const fetcherRef = useRef(fetcher)
